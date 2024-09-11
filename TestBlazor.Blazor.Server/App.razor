@@ -1,0 +1,24 @@
+﻿@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using DevExpress.Blazor
+@using DevExpress.ExpressApp.Blazor.Components
+@using TestBlazor.Blazor.Server
+
+
+<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(DevExpress.ExpressApp.Blazor.BlazorApplication).Assembly }">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" />
+    </Found>
+    <NotFound>
+        <LayoutView>
+            <PageTitle>Not found</PageTitle>
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
